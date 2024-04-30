@@ -22,6 +22,116 @@ export class VehicleService {
       'Pop'
     ),
     new Vehicle(
+      'Pitaya', // nickname
+      AssetTypes.Vehicle, // asset type
+      0, // purchase Amount
+      0, // appraisal Amount
+      new Date(2020, 7, 4),
+      2015,
+      Manufacturer.FIAT,
+      '500',
+      'Abarth'
+    ),
+    new Vehicle(
+      'Gucci', // nickname
+      AssetTypes.Vehicle, // asset type
+      0, // purchase Amount
+      0, // appraisal Amount
+      new Date(2020, 7, 4),
+      2012,
+      Manufacturer.FIAT,
+      '500c',
+      'Pop'
+    ),
+    new Vehicle(
+      'Jack', // nickname
+      AssetTypes.Vehicle, // asset type
+      0, // purchase Amount
+      0, // appraisal Amount
+      new Date(2020, 7, 4),
+      2014,
+      Manufacturer.FIAT,
+      '500L',
+      'Trekking'
+    ),
+    new Vehicle(
+      'Bell', // nickname
+      AssetTypes.Vehicle, // asset type
+      0, // purchase Amount
+      0, // appraisal Amount
+      new Date(2020, 7, 4),
+      2015,
+      Manufacturer.FIAT,
+      '500L',
+      'Urbana Trekking'
+    ),
+    new Vehicle(
+      'Blueberry', // nickname
+      AssetTypes.Vehicle, // asset type
+      0, // purchase Amount
+      0, // appraisal Amount
+      new Date(2020, 7, 4),
+      2015,
+      Manufacturer.KIA,
+      'Forte',
+      'EX'
+    ),
+    new Vehicle(
+      'Cherry', // nickname
+      AssetTypes.Vehicle, // asset type
+      0, // purchase Amount
+      0, // appraisal Amount
+      new Date(2020, 7, 4),
+      2013,
+      Manufacturer.KIA,
+      'Optima',
+      'LX'
+    ),
+    new Vehicle(
+      'Hickory', // nickname
+      AssetTypes.Vehicle, // asset type
+      0, // purchase Amount
+      0, // appraisal Amount
+      new Date(2020, 7, 4),
+      2014,
+      Manufacturer.KIA,
+      'Soul',
+      'SE'
+    ),
+    new Vehicle(
+      'Coco', // nickname
+      AssetTypes.Vehicle, // asset type
+      0, // purchase Amount
+      0, // appraisal Amount
+      new Date(2020, 7, 4),
+      2013,
+      Manufacturer.MINI,
+      'Cooper',
+      'Base'
+    ),
+    new Vehicle(
+      'Apple', // nickname
+      AssetTypes.Vehicle, // asset type
+      0, // purchase Amount
+      0, // appraisal Amount
+      new Date(2020, 7, 4),
+      2014,
+      Manufacturer.MINI,
+      'Cooper',
+      'Sports'
+    ),
+    new Vehicle(
+      'Maple', // nickname
+      AssetTypes.Vehicle, // asset type
+      0, // purchase Amount
+      0, // appraisal Amount
+      new Date(2020, 7, 4),
+      2015,
+      Manufacturer.MIT,
+      'Mirage',
+      'DE'
+    ),
+    new Vehicle(
       'Blackberry', // nickname
       AssetTypes.Vehicle, // asset type
       0, // purchase Amount
@@ -30,7 +140,7 @@ export class VehicleService {
       2013,
       Manufacturer.NISSAN,
       'Altima',
-      'SE'
+      'SV'
     ),
   ];
 

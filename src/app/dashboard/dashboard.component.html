@@ -1,1 +1,45 @@
-<p>dashboard works!</p>
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <mat-grid-list cols="{{ (cardLayout | async)?.columns }}" rowHeight="250px">
+    <!--Mini Cards-->
+    <mat-grid-tile
+      *ngFor="let mc of miniCardData"
+      [colspan]="(cardLayout | async)?.miniCard.cols"
+      [rowspan]="(cardLayout | async)?.miniCard.rows"
+    >
+      <app-mini-card
+        [icon]="mc.icon"
+        [title]="mc.title"
+        [value]="mc.value"
+        [color]="mc.color"
+        [isIncrease]="mc.isIncrease"
+        duration="since last month"
+        [percentValue]="mc.percentValue"
+        [isCurrency]="mc.isCurrency"
+      ></app-mini-card>
+    </mat-grid-tile>
+
+    <!--Charts-->
+    <mat-grid-tile
+      *ngFor="let chartType of ['bar', 'line', 'pie', 'rad']; let i = index"
+      [colspan]="(cardLayout | async)?.chart.cols"
+      [rowspan]="(cardLayout | async)?.chart.rows"
+    >
+      <app-card title="Card {{ i }}" [ngSwitch]="chartType">
+        <app-bar-chart *ngSwitchCase="'bar'"></app-bar-chart>
+        <app-line-chart *ngSwitchCase="'line'"></app-line-chart>
+        <app-pie-chart *ngSwitchCase="'pie'"></app-pie-chart>
+        <app-radar-chart *ngSwitchCase="'rad'"></app-radar-chart>
+        <app-bar-chart *ngSwitchDefault>Code Default</app-bar-chart>
+      </app-card>
+    </mat-grid-tile>
+
+    <!--Table-->
+    <mat-grid-tile
+      [colspan]="(cardLayout | async)?.table.cols"
+      [rowspan]="(cardLayout | async)?.table.rows"
+    >
+      <app-card title="Card 9"><app-table></app-table></app-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

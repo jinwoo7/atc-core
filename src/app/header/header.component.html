@@ -23,7 +23,7 @@
           routerLinkActive="active"
           *ngFor="let route of routes"
         >
-          <a routerLink="/{{ route.name }}" class="nav-link">{{
+          <a [routerLink]="'/' + route.name" class="nav-link">{{
             route.name | titlecase
           }}</a>
         </li>
