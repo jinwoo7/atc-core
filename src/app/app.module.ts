@@ -9,6 +9,8 @@ import { AssetsComponent } from './assets/assets.component';
 import { FinancesComponent } from './finances/finances.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.modules';
+import { RealEstateService } from './services/realEstate.service';
+import { VehicleService } from './services/vehicle.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,7 @@ import { AppRoutingModule } from './app-routing.modules';
     DashboardComponent,
   ],
   imports: [BrowserModule, MdbCollapseModule, AppRoutingModule],
-  providers: [],
+  providers: [VehicleService, RealEstateService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
