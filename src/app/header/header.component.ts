@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   collapsed = true;
+  routes = [
+    { name: 'dashboard' },
+    { name: 'assets' },
+    { name: 'investiments' },
+    { name: 'finances' },
+  ];
 }
