@@ -1,15 +1,15 @@
 <div class="chartContainer">
   <canvas
     baseChart
-    [data]="pieChartData"
-    [type]="pieChartType"
-    [options]="pieChartOptions"
-    width="400"
-    height="400"
+    [data]="config.data"
+    [type]="config.type"
+    [options]="config.options"
+    (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)"
   >
   </canvas>
 
-  <mat-divider style="margin: 1em 0"></mat-divider>
+  <!-- <mat-divider style="margin: 1em 0"></mat-divider>
 
   <div class="button-row">
     <button
@@ -47,5 +47,5 @@
     >
       Change Legend Position
     </button>
-  </div>
+  </div> -->
 </div>

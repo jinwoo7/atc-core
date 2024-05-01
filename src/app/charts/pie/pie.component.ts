@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
+import { ChartConfiguration, ChartEvent } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
-import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-pie-chart',
@@ -11,32 +10,41 @@ import { MatButton } from '@angular/material/button';
 export class PieChartComponent {
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
 
-  // Pie
-  public pieChartOptions: ChartConfiguration['options'] = {
-    plugins: {
-      legend: {
-        display: true,
-        position: 'top',
-      },
-      // datalabels: {
-      //   formatter: (value, ctx) => {
-      //     if (ctx.chart.data.labels) {
-      //       return ctx.chart.data.labels[ctx.dataIndex];
-      //     }
-      //     return '';
-      //   },
-      // },
-    },
-  };
-  public pieChartData: ChartData<'pie', number[], string | string[]> = {
-    labels: [['Download', 'Sales'], ['In', 'Store', 'Sales'], 'Mail Sales'],
+  public chartData = {
+    labels: ['Eating', 'Drinking', 'Sleeping', 'Designing'],
     datasets: [
       {
-        data: [300, 500, 100],
+        label: 'My First Dataset',
+        data: [65, 59, 90, 81, 62],
+
+        fill: true,
+        backgroundColor: [
+          'rgba(131, 182, 146)',
+          'rgba(249, 173, 160)',
+          'rgba(249, 98, 125)',
+          'rgba(198, 91, 124)',
+          'rgba(91, 55, 88)',
+        ],
       },
     ],
   };
-  public pieChartType: ChartType = 'pie';
+
+  config: ChartConfiguration = {
+    type: 'doughnut', // 'pie'
+    data: this.chartData,
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        title: {
+          display: true,
+          text: "Jinwoo's Pie Chart",
+        },
+      },
+    },
+  };
 
   // events
   public chartClicked({
@@ -59,102 +67,104 @@ export class PieChartComponent {
     console.log(event, active);
   }
 
-  changeLabels(): void {
-    const words = [
-      'hen',
-      'variable',
-      'embryo',
-      'instal',
-      'pleasant',
-      'physical',
-      'bomber',
-      'army',
-      'add',
-      'film',
-      'conductor',
-      'comfortable',
-      'flourish',
-      'establish',
-      'circumstance',
-      'chimney',
-      'crack',
-      'hall',
-      'energy',
-      'treat',
-      'window',
-      'shareholder',
-      'division',
-      'disk',
-      'temptation',
-      'chord',
-      'left',
-      'hospital',
-      'beef',
-      'patrol',
-      'satisfied',
-      'academy',
-      'acceptance',
-      'ivory',
-      'aquarium',
-      'building',
-      'store',
-      'replace',
-      'language',
-      'redeem',
-      'honest',
-      'intention',
-      'silk',
-      'opera',
-      'sleep',
-      'innocent',
-      'ignore',
-      'suite',
-      'applaud',
-      'funny',
-    ];
-    const randomWord = () => words[Math.trunc(Math.random() * words.length)];
-    this.pieChartData.labels = new Array(3).map(() => randomWord());
+  // Fun actions to try:
 
-    this.chart?.update();
-  }
+  // changeLabels(): void {
+  //   const words = [
+  //     'hen',
+  //     'variable',
+  //     'embryo',
+  //     'instal',
+  //     'pleasant',
+  //     'physical',
+  //     'bomber',
+  //     'army',
+  //     'add',
+  //     'film',
+  //     'conductor',
+  //     'comfortable',
+  //     'flourish',
+  //     'establish',
+  //     'circumstance',
+  //     'chimney',
+  //     'crack',
+  //     'hall',
+  //     'energy',
+  //     'treat',
+  //     'window',
+  //     'shareholder',
+  //     'division',
+  //     'disk',
+  //     'temptation',
+  //     'chord',
+  //     'left',
+  //     'hospital',
+  //     'beef',
+  //     'patrol',
+  //     'satisfied',
+  //     'academy',
+  //     'acceptance',
+  //     'ivory',
+  //     'aquarium',
+  //     'building',
+  //     'store',
+  //     'replace',
+  //     'language',
+  //     'redeem',
+  //     'honest',
+  //     'intention',
+  //     'silk',
+  //     'opera',
+  //     'sleep',
+  //     'innocent',
+  //     'ignore',
+  //     'suite',
+  //     'applaud',
+  //     'funny',
+  //   ];
+  //   const randomWord = () => words[Math.trunc(Math.random() * words.length)];
+  //   this.pieChartData.labels = new Array(3).map(() => randomWord());
 
-  addSlice(): void {
-    if (this.pieChartData.labels) {
-      this.pieChartData.labels.push(['Line 1', 'Line 2', 'Line 3']);
-    }
+  //   this.chart?.update();
+  // }
 
-    this.pieChartData.datasets[0].data.push(400);
+  // addSlice(): void {
+  //   if (this.pieChartData.labels) {
+  //     this.pieChartData.labels.push(['Line 1', 'Line 2', 'Line 3']);
+  //   }
 
-    this.chart?.update();
-  }
+  //   this.pieChartData.datasets[0].data.push(400);
 
-  removeSlice(): void {
-    if (this.pieChartData.labels) {
-      this.pieChartData.labels.pop();
-    }
+  //   this.chart?.update();
+  // }
 
-    this.pieChartData.datasets[0].data.pop();
+  // removeSlice(): void {
+  //   if (this.pieChartData.labels) {
+  //     this.pieChartData.labels.pop();
+  //   }
 
-    this.chart?.update();
-  }
+  //   this.pieChartData.datasets[0].data.pop();
 
-  changeLegendPosition(): void {
-    if (this.pieChartOptions?.plugins?.legend) {
-      this.pieChartOptions.plugins.legend.position =
-        this.pieChartOptions.plugins.legend.position === 'left'
-          ? 'top'
-          : 'left';
-    }
+  //   this.chart?.update();
+  // }
 
-    this.chart?.render();
-  }
+  // changeLegendPosition(): void {
+  //   if (this.pieChartOptions?.plugins?.legend) {
+  //     this.pieChartOptions.plugins.legend.position =
+  //       this.pieChartOptions.plugins.legend.position === 'left'
+  //         ? 'top'
+  //         : 'left';
+  //   }
 
-  toggleLegend(): void {
-    if (this.pieChartOptions?.plugins?.legend) {
-      this.pieChartOptions.plugins.legend.display =
-        !this.pieChartOptions.plugins.legend.display;
-    }
+  //   this.chart?.render();
+  // }
 
-    this.chart?.render();
-  }
+  // toggleLegend(): void {
+  //   if (this.pieChartOptions?.plugins?.legend) {
+  //     this.pieChartOptions.plugins.legend.display =
+  //       !this.pieChartOptions.plugins.legend.display;
+  //   }
+
+  //   this.chart?.render();
+  // }
 }

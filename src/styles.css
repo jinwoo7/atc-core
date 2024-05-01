@@ -12,7 +12,7 @@ body {
 }
 
 .chartContainer canvas {
-  max-height: 250px;
+  max-height: 300px;
   width: auto;
 }
 
