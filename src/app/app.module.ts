@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MdbCollapseModule } from 'mdb-angular-ui-kit/collapse';
 import { InvestimentsComponent } from './investiments/investiments.component';
-import { AssetsComponent } from './assets/assets.component';
+import { AssetsPageComponent } from './assetspage/assetspage.component';
 import { FinancesComponent } from './finances/finances.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './app-routing.modules';
@@ -33,14 +33,16 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MiniCardComponent } from './mini-card/mini-card.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
     // In-House Components
     AppComponent,
     HeaderComponent,
+    HomepageComponent,
     InvestimentsComponent,
-    AssetsComponent,
+    AssetsPageComponent,
     FinancesComponent,
     DashboardComponent,
     CardComponent,
