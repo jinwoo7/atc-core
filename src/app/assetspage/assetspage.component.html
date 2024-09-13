@@ -1,24 +1,50 @@
-<p>assets works!</p>
-
+<br />
 <div class="grid-container">
-  <h1 class="mat-h1">Dashboard</h1>
-  <mat-grid-list cols="{{ (cardLayout | async)?.columns }}" rowHeight="250px">
-    <!--Mini Cards-->
-    <mat-grid-tile
-      *ngFor="let mc of miniCardData"
-      [colspan]="(cardLayout | async)?.miniCard.cols"
-      [rowspan]="(cardLayout | async)?.miniCard.rows"
-    >
-      <app-mini-card
-        [icon]="mc.icon"
-        [title]="mc.title"
-        [value]="mc.value"
-        [color]="mc.color"
-        [isIncrease]="mc.isIncrease"
-        duration="since last month"
-        [percentValue]="mc.percentValue"
-        [isCurrency]="mc.isCurrency"
-      ></app-mini-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <mat-tab-group>
+    <mat-tab label="Vehicles">
+      <mat-grid-list
+        cols="{{ (cardLayout | async)?.columns }}"
+        rowHeight="280px"
+      >
+        <!--Mini Cards-->
+        <mat-grid-tile
+          *ngFor="let vehicle of vehicles"
+          [colspan]="(cardLayout | async)?.miniCard.cols"
+          [rowspan]="(cardLayout | async)?.miniCard.rows"
+        >
+          <app-mini-asset-card
+            [picturePath]="vehicle.picturePath"
+            [name]="vehicle.name"
+            [icon]="vehicle.icon"
+            [type]="vehicle.type"
+            [year]="vehicle.year"
+            [make]="vehicle.make"
+            [model]="vehicle.model"
+          ></app-mini-asset-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </mat-tab>
+    <mat-tab label="Real Estate"
+      ><mat-grid-list
+        cols="{{ (cardLayout | async)?.columns }}"
+        rowHeight="280px"
+      >
+        <!--Mini Cards-->
+        <mat-grid-tile
+          *ngFor="let realEstate of realEstates"
+          [colspan]="(cardLayout | async)?.miniCard.cols"
+          [rowspan]="(cardLayout | async)?.miniCard.rows"
+        >
+          <app-mini-asset-card
+            [picturePath]="realEstate.picturePath"
+            [icon]="realEstate.icon"
+            [type]="realEstate.type"
+            [streetAddress]="realEstate.streetAddress"
+            [unit]="realEstate.unit"
+            [state]="realEstate.state"
+          ></app-mini-asset-card>
+        </mat-grid-tile> </mat-grid-list
+    ></mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
 </div>

@@ -1,0 +1,18 @@
+.example-card {
+  max-width: 300px;
+}
+
+.card-icon {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.avatar-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.card-subtitle {
+  text-align: left;
+  height: 40px;
+}

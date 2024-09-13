@@ -42,6 +42,8 @@
 
 .card-header {
   justify-content: center;
+  width: inherit;
+  height: inherit;
 }
 
 .green-text {
@@ -50,4 +52,9 @@
 
 .red-text {
   color: red;
+}
+
+img {
+  max-width: fit-content;
+  max-height: fit-content;
 }

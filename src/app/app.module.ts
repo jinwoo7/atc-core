@@ -34,6 +34,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MiniCardComponent } from './mini-card/mini-card.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { MiniAssetCardComponent } from './mini-asset-card/mini-asset-card.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     PieChartComponent,
     TableComponent,
     MiniCardComponent,
+    MiniAssetCardComponent,
   ],
   imports: [
     // In-House Imports
@@ -69,6 +72,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatTabsModule,
   ],
   providers: [
     // In-House Providers
