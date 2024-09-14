@@ -1,1 +1,10 @@
-<p>investiments works!</p>
+<div class="example-menu" cdkMenu *ngFor="let vehicle of vehicles">
+  <button
+    cdkMenuItemCheckbox
+    class="example-menu-item"
+    [cdkMenuItemChecked]="vehicle.isActive"
+    (cdkMenuItemTriggered)="vehicle.isActive = !vehicle.isActive"
+  >
+    {{ vehicle.name + " " + vehicle.icon }}
+  </button>
+</div>

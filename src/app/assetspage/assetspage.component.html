@@ -12,15 +12,18 @@
           [colspan]="(cardLayout | async)?.miniCard.cols"
           [rowspan]="(cardLayout | async)?.miniCard.rows"
         >
-          <app-mini-asset-card
-            [picturePath]="vehicle.picturePath"
-            [name]="vehicle.name"
-            [icon]="vehicle.icon"
-            [type]="vehicle.type"
-            [year]="vehicle.year"
-            [make]="vehicle.make"
-            [model]="vehicle.model"
-          ></app-mini-asset-card>
+          <a [routerLink]="'investiments/' + vehicle.name" class="nav-link">
+            <app-mini-asset-card
+              [picturePath]="vehicle.picturePath"
+              [name]="vehicle.name"
+              [icon]="vehicle.icon"
+              [type]="vehicle.type"
+              [year]="vehicle.year"
+              [make]="vehicle.make"
+              [model]="vehicle.model"
+              [isActive]="vehicle.isActive"
+            ></app-mini-asset-card>
+          </a>
         </mat-grid-tile>
       </mat-grid-list>
     </mat-tab>
@@ -41,10 +44,12 @@
             [type]="realEstate.type"
             [streetAddress]="realEstate.streetAddress"
             [unit]="realEstate.unit"
+            [city]="realEstate.city"
             [state]="realEstate.state"
+            [isActive]="realEstate.isActive"
           ></app-mini-asset-card>
         </mat-grid-tile> </mat-grid-list
     ></mat-tab>
-    <mat-tab label="Third"> Content 3 </mat-tab>
+    <!-- <mat-tab label="Third"> Content 3 </mat-tab> -->
   </mat-tab-group>
 </div>

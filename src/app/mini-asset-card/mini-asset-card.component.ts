@@ -10,14 +10,16 @@ export class MiniAssetCardComponent {
   @Input() name: string;
   @Input() icon: string;
   @Input() type: string;
+  @Input() isActive: boolean;
   // vehicles
   @Input() year: string;
   @Input() make: string;
   @Input() model: string;
   // real estate
-  @Input() state: string;
   @Input() streetAddress: string;
   @Input() unit: string;
+  @Input() city: string;
+  @Input() state: string;
 
   constructor() {}
 }
